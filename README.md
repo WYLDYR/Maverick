@@ -6,6 +6,6 @@ USE THE RELEASES, MASTER MAY BE BUGGED
 
 Instructions:
 ```
-sudo pip3 install progress
+sudo pip3 install colorify
 python3 main.py
 ```
