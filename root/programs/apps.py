@@ -23,5 +23,4 @@ def showPrograms(data):
 
 if __name__ == "__main__":
     print(Fore.RED + Back.WHITE + "APPS MANAGER" + Style.RESET_ALL)
-    print(Fore.GREEN + "We are aware of the [Segmentation fault (core dumped)] error. THIS WILL BE FIXED SOON!")
     showPrograms(data)

@@ -4,7 +4,7 @@ def prompt():
     import colorama
     import sys
 
-    print("Maverick 0.0.2")
+    print("Maverick 0.0.3")
 
     # set up user data
 

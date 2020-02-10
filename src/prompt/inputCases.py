@@ -28,6 +28,7 @@ class ProgramID:
 
 def mainCase(inp,programs):
     import colorama
+    import os
 
     inp = ArgChain(inp)
 
@@ -37,12 +38,9 @@ def mainCase(inp,programs):
 
     # movement commands
 
-    if inp.mainArg == "ls":
-        pass
-    if inp.mainArg == "cd":
-        pass
-    if inp.mainArg == "pwd":
-        pass
+    if inp.mainArg in ["ls","cd","pwd"]:
+        # Add movement commands
+        # Limit user to root
 
     for program in programs:
 
