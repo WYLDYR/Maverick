@@ -41,6 +41,7 @@ def mainCase(inp,programs):
     if inp.mainArg in ["ls","cd","pwd"]:
         # Add movement commands
         # Limit user to root
+        pass
 
     for program in programs:
 
