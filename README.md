@@ -6,6 +6,9 @@ USE THE RELEASES, MASTER MAY BE BUGGED
 
 Instructions:
 ```
-sudo pip3 install colorify
+sudo bash install_linux.sh
+echo OR...
+sudo bash install_win.sh
+
 python3 main.py
 ```
