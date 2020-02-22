@@ -1,5 +1,5 @@
 def prompt():
-    from src.data.dataRunner import getUserData, buildData
+    from src.data.dataRunner import getUserData, buildData, passwordProtectedCheck
     from src.prompt.inputCases import mainCase
     import colorama
     import sys
@@ -26,6 +26,9 @@ def prompt():
 
     while True:
 
-        user_input = input("#> ")
+        if passwordProtectedCheck():
+            user_input = input("$> ")
+        else:
+            user_input = input("#> ")
 
         mainCase(user_input,programs)

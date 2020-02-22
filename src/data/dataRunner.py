@@ -6,6 +6,15 @@ def getUserData():
 
     return shelve.open("./src/data/data", writeback = True)
 
+def passwordProtectedCheck():
+    data = getUserData()
+
+    try:
+        assert data["password"] is not None
+        return True
+    except:
+        return False
+
 def buildData():
 
     userdata = getUserData()
