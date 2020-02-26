@@ -15,6 +15,11 @@ def passwordProtectedCheck():
     except:
         return False
 
+def passwordComapre(passhash):
+    data = getUserData()
+
+    return passhash == data["password"]
+
 def buildData():
 
     userdata = getUserData()

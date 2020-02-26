@@ -3,7 +3,7 @@ import sys
 sys.path += "../../"
 
 from getpass import getpass
-from src.data.dataRunner import getUserData
+from src.data.dataRunner import getUserData, passwordComapre
 import hashlib
 
 userdata = getUserData()
@@ -19,7 +19,7 @@ def reset():
     new = getpass("New password: ")
 
     if usesOld:
-        if not hashlib.sha256(old.encode()).hexdigest() == userdata["password"]:
+        if not passwordComapre(hashlib.sha256(old.encode()).hexdigest()):
             print("Password is incorrect.")
             exit()
 
