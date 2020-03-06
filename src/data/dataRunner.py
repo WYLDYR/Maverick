@@ -40,6 +40,8 @@ def buildData():
 
         userdata.close()
 
+        # Install apps
+
         install("apps","./root/programs/apps.py")
         install("psswd","./root/programs/psswd.py")
         install("install","./root/programs/installer.py")

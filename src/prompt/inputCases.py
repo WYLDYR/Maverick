@@ -1,52 +1,54 @@
 class ArgChain:
     def __init__(self, args):
-        args = args.split(" ")
 
-        self.mainArg = args[0]
-        self.params = args
+        args = args.split(" ") # Split agruments into list
 
-        self.params.remove(args[0])
+        self.mainArg = args[0] # Get main argument (file name)
+        self.params = args # Assigns all other arguments to "params"
+
+        self.params.remove(args[0]) #Remove main argument
 
 class ProgramID:
+
     def __init__(self,id,path):
         self.id = id
         self.path = path
 
     def run(self,args):
+
         import os
         import platform
 
-        argString = ""
+        argString = "" # Create string to hold arguments
 
         for arg in args:
-            argString += arg + " "
+            argString += arg + " " # Add arguments to argument holder
 
-        if platform.system() == "Linux" or platform.system() == "Darwin":
-            os.system("python3 {} {}".format(self.path, argString))
+        if platform.system() == "Linux" or platform.system() == "Darwin": # Check OS
+            os.system("python3 {} {}".format(self.path, argString)) # Python call for Darwin or Linux
         else:
-            os.system("py {} {}".format(self.path, argString))
+            os.system("py {} {}".format(self.path, argString)) # Python call for Windows
 
 def mainCase(inp,programs):
+
     import colorama
     import os
 
     inp = ArgChain(inp)
 
-    if inp.mainArg == "exit":
+    if inp.mainArg == "exit": # Basic exit case
         print(colorama.Fore.RED + "Exiting..." + colorama.Style.RESET_ALL)
         exit()
 
     # movement commands
 
     if inp.mainArg in ["ls","cd","pwd"]:
-        # Add movement commands
-        # Limit user to root
         pass
 
-    for program in programs:
+    for program in programs: # Iterate programs
 
-        assert isinstance(program, ProgramID)
+        assert isinstance(program, ProgramID) # Assure program is an ID
 
         if inp.mainArg == program.id:
 
-            program.run(inp.params)
+            program.run(inp.params) # Execute program
