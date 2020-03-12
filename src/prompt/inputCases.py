@@ -26,19 +26,30 @@ class ProgramID:
 
         if platform.system() == "Linux" or platform.system() == "Darwin": # Check OS
             os.system("python3 {} {}".format(self.path, argString)) # Python call for Darwin or Linux
-        else:
+        elif platform.system() == "Windows":
             os.system("py {} {}".format(self.path, argString)) # Python call for Windows
+        else:
+            print("Unknown platform.")
 
 def mainCase(inp,programs):
 
     import colorama
     import os
+    import platform
 
     inp = ArgChain(inp)
 
     if inp.mainArg == "exit": # Basic exit case
         print(colorama.Fore.RED + "Exiting..." + colorama.Style.RESET_ALL)
         exit()
+
+    if inp.mainArg == "clear":
+        if platform.system() == "Linux" or platform.system() == "Darwin":
+            os.system("clear")
+        elif platform.system() == "Windows":
+            os.system("cls")
+        else:
+            print("Unknown platform.")
 
     # movement commands
 
