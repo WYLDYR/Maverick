@@ -1,6 +1,7 @@
 def prompt():
     from src.data.dataRunner import getUserData, buildData, passwordProtectedCheck
     from src.prompt.inputCases import mainCase
+    from root.programs.Maverick.colorScheme import maverickScheme
     import colorama
     import sys
 
@@ -27,8 +28,15 @@ def prompt():
     while True:
 
         if passwordProtectedCheck():
-            user_input = input("$> ")
+
+            maverickScheme.color("#> ","")
+
+            user_input = input()
+
         else:
-            user_input = input("#> ")
+
+            maverickScheme.color("$> ","")
+
+            user_input = input()
 
         mainCase(user_input,programs)
