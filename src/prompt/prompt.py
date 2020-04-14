@@ -5,21 +5,17 @@ def prompt():
     import colorama
     import sys
 
-    print("Maverick 0.0.2 Revised")
+    print("Maverick 0.0.3")
 
     # set up user data
 
     buildData() # check if this is the user's first time.
 
-    userdata = getUserData() # get the userdata
-
-    programs = userdata["programs"] # grab programs
-
-    userdata.close() # close the database
+    userdata = getUserData(); programs = userdata["programs"]; userdata.close()
 
     colorama.init() # init colorama for all system files
 
-    sys.path.append("../Maverick") # make path include all directories
+    sys.path.append(".") # make path include all directories, I think this is only temporary.
 
     #
 

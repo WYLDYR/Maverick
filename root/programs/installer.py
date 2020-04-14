@@ -7,13 +7,15 @@ from root.programs.Installer.install import install
 
 if __name__ == "__main__":
 
-    if len(sys.argv) == 3:
+    if sys.argv[1] in ["-help","-h","--help","--h"]:
 
-        # three args met
+        print("EX: install name /root/path")
 
-        path = sys.argv[2]
-        id = sys.argv[1]
+    else:
 
-        install(id,path)
+        path = input("Input desired path: ")
+        id = input("Input desired alias: ")
+
+        install(id, path)
 
         print("Restart your system to use the new program.")
