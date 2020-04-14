@@ -31,8 +31,9 @@ class ProgramID:
         else:
             print("Unknown platform.")
 
-def mainCase(inp,programs):
+def mainCase(inp, programs):
 
+    import src.util.filenav as filenav
     import colorama
     import os
     import platform
