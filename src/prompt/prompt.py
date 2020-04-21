@@ -19,6 +19,9 @@ def prompt():
 
     #
 
+    path = "./root"
+    pathcopy = path # really bad solution
+
     print()
 
     while True:
@@ -35,4 +38,9 @@ def prompt():
 
             user_input = input()
 
-        mainCase(user_input,programs)
+        path = mainCase(user_input,programs,path)
+
+        if path == None:
+            path = pathcopy
+
+        pathcopy = path

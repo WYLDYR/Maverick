@@ -31,9 +31,9 @@ class ProgramID:
         else:
             print("Unknown platform.")
 
-def mainCase(inp, programs):
+def mainCase(inp, programs, path):
 
-    import src.util.filenav as filenav
+    from src.util.filenav import displayPath
     import colorama
     import os
     import platform
@@ -54,8 +54,21 @@ def mainCase(inp, programs):
 
     # movement commands
 
-    if inp.mainArg in ["ls","cd","pwd"]:
-        pass
+    if inp.mainArg in ["ls","cd","pwd"]: # PWD DOESNT WORK
+
+        if inp.mainArg == "ls":
+
+            displayPath(path)
+
+        if inp.mainArg == "cd":
+
+            path += "/{}".format(inp.params[0])
+
+        if inp.mainArg == "pwd":
+
+            print("Coming soon :)")
+
+        return path
 
     for program in programs: # Iterate programs
 
